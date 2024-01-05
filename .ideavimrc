@@ -1,0 +1,101 @@
+set wildmenu
+set incsearch
+set ignorecase
+set smartcase
+set multiple-cursors
+set clipboard+=unnamed
+set ideajoin
+set ideaput
+" set relativenumber
+set number
+set surround
+set highlightedyank
+set idearefactormode=keep
+set ideamarks
+set showmode
+set NERDTree
+set which-key
+set timeoutlen=5000
+set sneak 
+set quickscope
+set scrolloff=5
+set keep-english-in-normal[-and-restore-in-insert]
+set sidescrolloff=5
+set history=1000   " overrides the 200 in defaults.vim
+Plug 'machakann/vim-highlightedyank'
+Plug 'preservim/nerdtree'
+Plug 'dbakker/vim-paragraph-motion'
+Plug 'michaeljsmith/vim-indent-object'
+let g:WhichKeyDesc_windows        = "<Space>w  Windows"
+let g:WhichKey_ShowVimActions = "true"
+set easymotion
+set commentary
+set textobj-entire
+set ReplaceWithRegister
+set exchange
+" Use ctrl-c as an ide shortcut in normal and visual modes
+sethandler <Tab> n:vim i-v:ide
+let mapleader = " "
+imap jj <Esc>
+nmap cc ciw
+nmap vv viw"_dP
+nmap <leader>e <Action>(RecentFiles)
+nmap <leader>f <Action>(GotoFile)
+nmap <C-s> <Action>(AceWordStartAction)
+nmap <leader>r <Action>(RenameElement)
+nmap <leader>P <Action>(PasteMultiple)
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+cmap <leader>t <Action>(ActivateTerminalToolWindow)
+tmap <leader>t <Action>(ActivateTerminalToolWindow)
+nmap / <Action>(Find)
+nmap <leader>w <Action>(AceWordStartAction)
+nmap <leader>g <Action>(ActivateCommitToolWindow)
+nmap <leader>n <Action>(GotoNextError)
+nmap n <Action>(GotoNextError)
+nmap <leader><leader> <Action>(GotoAction)
+nmap <leader>W <Action>(CloseAllEditors)
+nmap <Tab> <Action>(NextSplitter)
+nmap <C-j> <Action>(Back)
+imap <C-C> <Action>(EditorCompleteStatement)
+nmap <C-C> <Action>(EditorCompleteStatement)
+nmap <C-g> <Action>(ActivateCommitToolWindow)
+nmap <C-k> <action>(Forward)
+nmap <C-d> <action>(GotoDeclaration)
+nmap <C-v> viw"_dP
+nmap <C-n> <Action>(HighlightUsagesInFile)
+vmap <C-j> <C-e>
+imap <C-"> ds"
+
+vmap <C-k> <C-y>
+vmap <C-h> 10zh
+vmap <C-l> 10zl
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-h> <Left>
+imap <C-l> <Right>
+imap <C-i> <CR>
+nmap <C-t> <action>(QuickJavaDoc)
+nmap <C-c> <action>(ShowIntentionActions)
+nnoremap <leader>iv :action IntroduceVariable <CR>
+nnoremap <leader>m :action ExtractMethod  <Cr>
+vnoremap <leader>m :action ExtractMethod  <Cr>
+nnoremap <leader>ic :action IntroduceConstant <CR>
+nnoremap <leader>b :NERDTreeToggle <CR>
+nnoremap yy "+yy
+nnoremap <C-A> gg<S-v>G
+vnoremap y "+y
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P
+nnoremap zH 50zh
+nnoremap zL 50zl
+nnoremap L $
+nnoremap H ^
+vnoremap L $
+vnoremap H ^
+vmap J :m '>+1<CR>gv=gv
+vmap K :m '<-2<CR>gv=gv
+nnoremap J 15jzz
+nnoremap K 15kzz
+
